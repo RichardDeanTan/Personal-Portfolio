@@ -1,0 +1,139 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.navbar {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin: 0 2rem;
+    transition: color 0.3s;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-profile-pic {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-profile-pic:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+@media (max-width: 990px) {
+    .header {
+        padding: 2rem 3%;
+    }
+    .navbar {
+        flex-grow: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-right {
+       display: none;
+    }
+    .header-profile-pic {
+        display: none;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        display: none;
+    }
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+        order: 3;
+    }
+    .navbar.active {
+        display: block;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+        background: var(--gradient-text);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar a {
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: var(--text-color);
+        background: none;
+        -webkit-text-fill-color: initial;
+    }
+
+    .navbar a::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background: var(--gradient);
+        transition: width 0.3s;
+        border-radius: 2px;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+        width: 100%;
+    }
+}

@@ -1,0 +1,136 @@
+.experience {
+    background: var(--second-bg-color);
+}
+
+.experience-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+.experience-container::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: var(--gradient);
+    top: 0;
+    bottom: 0;
+    left: 3rem;
+    margin-left: -2px;
+}
+
+.experience-item {
+    padding: 1rem 4rem;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+    padding-left: 8rem;
+    padding-right: 2rem;
+}
+
+.experience-item::after {
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    right: auto;
+    background-color: var(--bg-color);
+    border: 4px solid var(--main-color);
+    top: 1.5rem;
+    left: 2.5rem;
+    border-radius: 50%;
+    z-index: 1;
+    margin-left: -1.25rem;
+}
+
+.experience-content {
+    padding: 2rem 3rem;
+    background: var(--card-bg-color);
+    position: relative;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.experience-content:hover {
+    border-color: var(--main-color);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.experience-header .year {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--main-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.experience-content h3 {
+    font-size: 2rem;
+}
+
+.experience-content h4 {
+    font-size: 1.6rem;
+    color: #ccc;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.experience-content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.experience-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    padding: 0 1rem;
+}
+
+.experience-details.active {
+    padding: 1rem;
+}
+
+.experience-details ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.experience-details li {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.experience-details li::before {
+    content: '✓';
+    color: var(--main-color);
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .experience-container::before {
+        left: 2.5rem;
+    }
+    .experience-item {
+        width: 100%;
+        padding-left: 5rem;
+        padding-right: 1rem;
+    }
+    .experience-item::after {
+        left: 2rem;
+    }
+}
