@@ -57,6 +57,8 @@
 .about-image-box {
     padding: 0;
     overflow: hidden;
+    position: relative;
+    height: 400px;
 }
 
 .about-img {
@@ -64,6 +66,20 @@
     max-height: 400px;
     object-fit: contain;
     transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Fill container */
+    height: 100%;
+}
+
+.about-img:first-child {
+    z-index: 1;
+}
+
+.about-img:last-child {
+    z-index: 2;
+    filter: drop-shadow(0 10px 50px rgba(0, 123, 255, 0.4));
 }
 
 .about-image-box:hover .about-img {
