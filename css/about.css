@@ -82,7 +82,7 @@
     filter: drop-shadow(0 10px 50px rgba(0, 123, 255, 0.4));
 }
 
-.about-image-box:hover .about-img {
+.about-image-box:hover .about-img:last-child {
     transform: scale(1.05);
 }
 
