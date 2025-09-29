@@ -120,7 +120,7 @@
 .tech-carousel {
     display: flex;
     flex-shrink: 0;
-    animation: scroll 40s linear infinite;
+    animation: scroll 50s linear infinite;
 }
 
 .tech-icon {
@@ -131,12 +131,6 @@
     padding: 1rem;
     border-radius: 50%;
     border: 2px solid transparent;
-}
-
-.tech-icon:hover {
-    color: var(--text-color);
-    transform: scale(1.2);
-    box-shadow: 0 0 1rem #6a0dad, 0 0 1rem #007bff;
 }
 
 @keyframes scroll {
